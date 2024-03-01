@@ -1,0 +1,61 @@
+ <div align="center" style="margin-bottom: 20px;margin-top: 20px;">
+    <h2 style="font-size: 50px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;color: #3568f2;">Sistema Gestión de Hospital</h2>
+    <!-- <img align="center" style="width: 30rem;" src="https://png.pngtree.com/png-clipart/20230822/original/pngtree-hospital-building-for-healthcare-cartoon-background-vector-illustration-with-picture-image_8159416.png" alt=""> -->
+
+</div> 
+
+<div style="margin-bottom: 20px;">
+  <a class="btn text-white" style="background-color: #3fa3f0;" routerLink="/registrar-paciente">
+    <i class="fas fa-stethoscope me-2"></i>
+    Registrar paciente
+  </a>
+</div>
+
+
+  <div class="card-body">
+  <table class="table table-sm">
+    <thead class="bg-primary text-white">
+      <tr align="center">
+        <th>Nombres y Apellidos</th>
+        <th>DNI</th>
+        <th>Dirección</th>
+        <th>Fecha de nacimiento</th>
+        <th>Nombre del Médico</th>
+        <th>Fecha de la cita</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor= "let paciente of pacientes" align="center">
+        <td>{{paciente.nombre}}</td>
+        <td>{{paciente.dni}}</td>
+        <td>{{paciente.direccion}}</td>
+        <td>{{ paciente.fechaNac}}</td>
+        <td>{{paciente.medico}}</td>
+        <td>{{paciente.fechaCita}}</td>
+        <td>
+          <a class="btn text-white btn-lg btn-floating" style="background-color: #36dc55;" (click)= "actualizarPaciente(paciente.id)" >
+            <i class="fas fa-pen"></i>
+          </a>
+
+          <a class="btn text-white btn-lg btn-floating" style="background-color: #ff1111;" (click)= "eliminarPaciente(paciente.id)" >
+            <i class="fas fa-trash"></i>
+          </a>
+
+          <a class="btn text-white btn-lg btn-floating" style="background-color: #2bac97;" (click)= "verDetallesDelPaciente(paciente.id)">
+            <i class="fas fa-eye"></i>
+          </a>
+
+           <!-- <button (click)= "actualizarPaciente(paciente.id)" class="btn btn-success">Editar</button>
+          <button (click)= "eliminarPaciente(paciente.id)" class="btn btn-danger" style="margin-left : 10px;">Eliminar</button>
+          <button (click)= "verDetallesDelPaciente(paciente.id)" class="btn btn-secondary" style="margin-left : 10px;">Detalles</button> -->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  
+  <div align="center" style="margin-bottom: 30px;">
+  <h5 *ngIf="pacientes.length == 0" style="font-size: 30px;">No hay pacientes para mostrar</h5>
+  </div> 
+  

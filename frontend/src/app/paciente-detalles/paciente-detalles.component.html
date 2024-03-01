@@ -1,0 +1,41 @@
+
+<!--  -->
+<div class="card mb-3" style="max-width: 100%; margin-top: 30px;" align="center">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img
+          src="https://img.freepik.com/fotos-premium/pasillo-hospital-limpio-esteril-vacio-luz-azul-interior-establecimiento-medico-moderno-ia-generativa_116317-25623.jpg"
+          class="img-fluid rounded-start"
+        />
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+            <h3 style="font-size: 40px;" class="card-tittle text-primary"> Detalles del paciente</h3>
+            <div align="center" style="font-size: 25px;">
+                <div>
+                    <label> <b> Código: </b></label> {{paciente.id}}
+                </div>
+                <div>
+                    <label> <b> Nombres y Apellidos: </b></label> {{paciente.nombre}}
+                </div>
+                <div>
+                    <label> <b> Dni: </b></label> {{paciente.dni}}
+                </div>
+                <div>
+                    <label> <b> Fecha de nacimiento: </b></label> {{paciente.fechaNac}}
+                </div>
+                <div>
+                    <label> <b> Médico que lo atenderá: </b></label> {{paciente.medico}}
+                </div>
+                <div>
+                    <label> <b> Fecha de la cita: </b></label> {{paciente.fechaCita}}
+                </div>
+            </div>
+    
+            </div>
+        <div class="card-body">
+            <button routerLink="/pacientes" type="button" class="btn btn-primary">Volver</button>
+         </div>
+      </div>
+    </div>
+  </div>
